@@ -9,6 +9,10 @@ playbtn.addEventListener("click", () => {
   setTimeout(() => {
     startscreen.style.display = "none";
     gamebuttons.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      gamebuttons.classList.add("fade-in");
+    });
+
     startgame();
   }, 400);
 });
