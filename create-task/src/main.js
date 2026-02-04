@@ -1,18 +1,13 @@
 import "./style.css";
-const startscreen = document.querySelector(".startscreen");
-const playbtn = document.querySelector(".playbtn");
-const gamebuttons = document.querySelector(".gamebuttons");
+import "./counter.js";
 
-playbtn.addEventListener("click", () => {
-  startscreen.classList.add("fade-out");
+let sequence = [];
+let playersequence = [];
+let level = 0;
 
-  setTimeout(() => {
-    startscreen.style.display = "none";
-    gamebuttons.classList.remove("hidden");
-    requestAnimationFrame(() => {
-      gamebuttons.classList.add("fade-in");
-    });
-
-    startgame();
-  }, 400);
-});
+export function startgame() {
+  sequence = [];
+  playersequence = [];
+  level = 0;
+  nextround();
+}

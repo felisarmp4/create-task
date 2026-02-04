@@ -24,6 +24,7 @@ body {
   align-items: center;
   background: #487e8f57;
   transition: opacity 0.4s ease;
+  z-index: 10;
 }
 
 .startscreen.fade-out {
@@ -45,6 +46,17 @@ body {
 
 .playbtn:hover {
   transform: scale(1.1);
+}
+
+.gamebuttons {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 5;
 }
 
 .gamebuttons button {
