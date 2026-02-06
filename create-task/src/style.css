@@ -62,10 +62,24 @@ body {
 .gamebuttons button {
   opacity: 0;
   transform: scale(0.8);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  pointer-events: none;
   transition:
     opacity 0.4s ease,
-    transform 0.4s ease;
-  pointer-events: none;
+    transform 0.4s ease,
+    filter 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.gamebuttons button img {
+  display: block;
+  width: 400px;
+  height: auto;
 }
 
 .gamebuttons.fade-in button {
@@ -74,12 +88,80 @@ body {
   pointer-events: auto;
 }
 
-.gamebuttons.fade-in button:nth-child(1) {
+.gamebuttons button.usagi {
+  background-color: #ffd86b;
+  border: #fff1d2 5px solid;
+  border-radius: 20px;
+}
+
+.gamebuttons button.chiikawa {
+  background-color: #fffdfe;
+  border: #fbc3cf 5px solid;
+  border-radius: 20px;
+}
+
+.gamebuttons button.hachiware {
+  background-color: #b0ccdb;
+  border: #548199 5px solid;
+  border-radius: 20px;
+}
+
+.gamebuttons.fade-in button.usagi {
   transition-delay: 0.1s;
 }
-.gamebuttons.fade-in button:nth-child(2) {
+.gamebuttons.fade-in button.chiikawa {
   transition-delay: 0.3s;
 }
-.gamebuttons.fade-in button:nth-child(3) {
+.gamebuttons.fade-in button.hachiware {
   transition-delay: 0.5s;
+}
+
+.usagi.active {
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px 10px #f2dc62cc;
+}
+
+.chiikawa.active {
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px 10px #ffffffcc;
+}
+
+button.hachiware.active {
+  animation: glow-blue 0.5s ease-in-out;
+}
+
+@keyframes glow-blue {
+  0%,
+  100% {
+    box-shadow: none;
+    background-color: #b0ccdb;
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(116, 145, 190, 0.3);
+    background-color: #bdd4e1;
+  }
+}
+
+.gamebuttons button {
+  transition: all 0.2s ease;
+}
+
+.instruction-text {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: #2a2b35;
+  background: #ffffffe6;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 3px solid #4e4437;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instruction-text.show {
+  opacity: 1;
 }
