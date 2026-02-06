@@ -137,8 +137,8 @@ button.hachiware.active {
     background-color: #b0ccdb;
   }
   50% {
-    box-shadow: 0 0 20px 8px rgba(116, 145, 190, 0.3);
-    background-color: #bdd4e1;
+    box-shadow: 0 0 25px 12px rgba(132, 163, 209, 0.6);
+    background-color: #c8dfe9;
   }
 }
 
