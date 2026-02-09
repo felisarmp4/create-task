@@ -63,7 +63,7 @@ function lightupbutton(colorname) {
 
   setTimeout(() => {
     button.classList.remove("active");
-  }, 500);
+  }, 800);
 }
 
 function handleplayerclick(colorname) {
